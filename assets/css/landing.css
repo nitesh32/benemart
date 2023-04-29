@@ -1,3 +1,27 @@
 body{
-    background-color: aqua;
+    background-color: white;
+}
+::selection {
+    opacity: 0;
+  }
+#image_logo{
+    height: 80vh;
+    background-image: url(../images/fruits.jpg);
+    background-size:cover;
+    font-size: 15rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+#image_logo div{
+    height: 80vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    color: black;
+    mix-blend-mode: screen;
 }
