@@ -22,13 +22,13 @@ module.exports.profile=function(req,res){
 }
 module.exports.Sign_up=function(req,res){
     return res.render("sign_up",{
-       title: "codial | sign_up"
+       title: "Benemart | sign_up"
     });
         
 }
 module.exports.Sign_in=function(req,res){
     return res.render("sign_in",{
-        title: "codial | sign_in"
+        title: "Benemart | sign_in"
      });
 }
 
