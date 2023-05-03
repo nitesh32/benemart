@@ -15,6 +15,11 @@ const db = require("./config/mongoose") ;
 const user = require("./models/users");
 const { Collection } = require("mongoose");
 
+// //api testing
+// fetch('https://fakestoreapi.com/products')
+//             .then(res=>res.json())
+//             .then(json=>console.log(json))
+
 
 app.use(express.static("assets"));
 const expresslayouts= require("express-ejs-layouts");

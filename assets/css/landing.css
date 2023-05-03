@@ -1,11 +1,27 @@
+:root {
+    --bl: rgb(54,134,255);
+    --bl2:rgb(88,151,255);
+    --gr:rgb(59,214,202);
+  }
 body{
     background-color: white;
+    margin: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: top;
+    flex-direction: column;
+
 }
 ::selection {
     opacity: 0;
   }
+
+:root {
+    --bl: rgb(54,134,255);
+    --bl2:rgb(88,151,255);
+}
 #image_logo{
-    height: 80vh;
+    height: 60vh;
     background-image: url(../images/fruits.jpg);
     background-size:cover;
     font-size: 15rem;
@@ -13,15 +29,39 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
+    /* border:1px solid black; */
 
 }
 #image_logo div{
-    height: 80vh;
+    height: 60vh;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     background: white;
     color: black;
-    mix-blend-mode: screen;
+    mix-blend-mode:screen;
 }
+#process{
+    position: absolute;
+    bottom: 0px;
+    /* border: 1px solid black; */
+    height: 250px;
+    width: 900px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--bl);
+}
+.box{
+    border: 1px solid black;
+    height: 250px;
+    width: 300px;
+    padding:4px;
+    color: var(--bl);
+}
+.box i{
+    color: var(--bl);
+    border:1px solid black;
+}
+

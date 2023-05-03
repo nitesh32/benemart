@@ -1,6 +1,22 @@
-<h1>Sign in page </h1>
-<form action="/users/create_session" method="post">
-    <input type="email" name="email" placeholder="Enter email" required>
-    <input type="password" name="password" placeholder="Enter password" required>
-    <input type="Submit" value="Sign In">
-</form>
+<div class="login-box">
+  <h2>Sign in</h2>
+  <form action="/users/create_session" method="post">
+    <div class="user-box">
+        <label>User email</label>
+      <input type="email" name="email" placeholder="Enter email"  />
+    </div>
+    <div class="user-box">
+        <label >Passward</label>
+      <input type="password" name="password" placeholder="Enter password"  />
+    </div>
+    <div class="button-form">
+    <input type="Submit" value="Sign In" id="submit" />
+    <!-- <div id="register">
+        Don't have and account ?
+        <form action="/users/signup" method="get">
+            <input type="Submit" value="Register" id="reg">
+        </form>
+    </div> -->
+    </div>
+  </form>
+</div>

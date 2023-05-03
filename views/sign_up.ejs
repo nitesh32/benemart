@@ -1,10 +1,14 @@
 
-<h1>Sign up page </h1>
+<div id="sign_div">
 
 <form action="/users/create" method="post" id="form_sign_up">
-    <input type="text" name="name" placeholder="Enter name">
-    <input type="email" name="email" placeholder="Enter email">
-    <input type="password" name="password" placeholder="Enter password">
-    <input type="text" name="canfirmpassword" placeholder="canfirm password">
-    <input type="submit" value="Sign Up">
+    <label >Name</label>
+    <input type="text" name="name" placeholder="Enter name" class="take">
+    <label >E-mail</label>
+    <input type="email" name="email" placeholder="Enter email" class="take">
+    <label >Passward</label>
+    <input type="password" name="password" placeholder="Enter password" class="take">
+    <input type="text" name="canfirmpassword" placeholder="canfirm password" class="take">
+    <input type="submit" value="Sign Up" id="submit_sign_up">
 </form>
+</div>
