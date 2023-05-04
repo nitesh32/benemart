@@ -1,18 +1,22 @@
 const User = require("../models/users");
 const product = require("../models/product");
-// console.log(product);
+
 module.exports.profile = function (req, res) {
   if (req.cookies.user_id) {
     User.findOne({ _id: req.cookies.user_id }, function (err, user) {
       if (user) {
+        product.find(function (err, it) {
+          console.log(it);
+        });
         return res.render("users", {
           title: "benemart | profile",
           user: user,
         });
+        
       }
-
       return res.redirect("/users/signin");
     });
+    
   } else {
     return res.redirect("/users/signin");
   }
@@ -87,5 +91,4 @@ module.exports.item_post = function (req, res) {
     }
     return res.redirect("/users/profile");
   });
-
 };
