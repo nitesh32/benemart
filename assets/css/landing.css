@@ -1,7 +1,9 @@
 :root {
     --bl: rgb(54,134,255);
-    --bl2:rgb(88,151,255);
-    --gr:rgb(59,214,202);
+  --bl2:rgb(88,151,255);
+  --gr:rgb(59,214,202);
+  --grey:rgb(135,135,135);
+  --green:rgb(77,152,79);
   }
 body{
     background-color: white;
@@ -44,7 +46,7 @@ body{
 }
 #process{
     position: absolute;
-    bottom: 0px;
+    bottom: 80px;
     /* border: 1px solid black; */
     height: 250px;
     width: 900px;
@@ -54,14 +56,40 @@ body{
     color: var(--bl);
 }
 .box{
-    border: 1px solid black;
+    /* border: 1px solid black; */
     height: 250px;
     width: 300px;
     padding:4px;
+    margin: 10px;
     color: var(--bl);
 }
-.box i{
+.box h2{
+    color: black;
+    font-size: 1rem;
+}
+.box p{
+    color: var(--grey);
+}
+.ico{
+    height: 20px;
+    width: 30px;
     color: var(--bl);
     border:1px solid black;
 }
+#Company{
+    /* border: 1px solid black; */
+    border-top: 2px solid var(--grey);
+    border-bottom: 2px solid var(--grey);
+    height: 100px;
+    width: 60%;
+    position:absolute;
+    bottom:-70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#Company i{
+    margin-right: 40px;
+}
+
 

@@ -5,6 +5,9 @@ module.exports.profile = function (req, res) {
   if (req.cookies.user_id) {
     User.findOne({ _id: req.cookies.user_id }, function (err, user) {
       if (user) {
+        // to be solve error here 
+        // error
+        // error
         product.find(function (err, it) {
           console.log(it);
         });

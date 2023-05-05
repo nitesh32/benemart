@@ -236,6 +236,9 @@ header{
   /* border-radius: 4px; */
   background-color: var(--bl);
 }
+.user-box input::placeholder{
+  color: white;
+}
 .button-form{
   margin-top: 5px;
   width: 110%;
