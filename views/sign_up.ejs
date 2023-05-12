@@ -1,14 +1,18 @@
 
 <div id="sign_div">
-
+    <h2>Sign up</h2>
 <form action="/users/create" method="post" id="form_sign_up" autocomplete="off">
     <label >Name</label>
     <input type="text" name="name" placeholder="Enter name" class="take">
+    <i class="fa-solid fa-signature " id="ic1" ></i>
     <label >E-mail</label>
     <input type="email" name="email" placeholder="Enter email" class="take" autocomplete="false">
+    <i class="fa-solid fa-envelope " id="ic2"></i>
     <label >Passward</label>
     <input type="password" name="password" placeholder="Enter password" class="take">
+    <i class="fa-solid fa-lock" id="ic3"></i>
     <input type="text" name="canfirmpassword" placeholder="canfirm password" class="take">
+    <i class="fa-solid fa-lock" id="ic4"></i>
     <input type="submit" value="Sign Up" id="submit_sign_up">
 </form>
 </div>

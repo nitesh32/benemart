@@ -1,26 +1,25 @@
 const User = require("../models/users");
 const product = require("../models/product");
-
+function show_name(){
+  console.log();
+}
 module.exports.profile = function (req, res) {
+  
   if (req.cookies.user_id) {
     User.findOne({ _id: req.cookies.user_id }, function (err, user) {
+      show_name();
       if (user) {
-        // to be solve error here 
-        // error
-        // error
-        product.find(function (err, it) {
-          console.log(it);
-        });
-        return res.render("users", {
-          title: "benemart | profile",
-          user: user,
-        });
-        
+        product.find({}, function(err, data) {
+          return res.render('users.ejs', {
+           title:"Benemart | profile",
+           user : user,
+           items: data
+          });
+         });
       }
-      return res.redirect("/users/signin");
     });
-    
-  } else {
+  } 
+  else {
     return res.redirect("/users/signin");
   }
 };
@@ -82,9 +81,18 @@ module.exports.out = function (req, res) {
   }
 };
 module.exports.post_item = function (req, res) {
-  return res.render("Post_items", {
-    title: "Benemart | post form",
+  User.findOne({ _id: req.cookies.user_id }, function (err, user) {
+    if (user) {
+      return res.render("Post_items", {
+        title: "benemart | post form",
+        user: user,
+      });
+      
+    }
+    return res.redirect("/users/signin");
   });
+  
+
 };
 module.exports.item_post = function (req, res) {
   product.create(req.body, function (err, user) {
@@ -94,4 +102,5 @@ module.exports.item_post = function (req, res) {
     }
     return res.redirect("/users/profile");
   });
+  
 };

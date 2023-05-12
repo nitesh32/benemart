@@ -17,6 +17,7 @@ body{
     justify-content: top;
     flex-direction: column;
     background-color: var(--gr);
+    width: 100%;
 }
 
 header{
@@ -27,7 +28,7 @@ header{
     align-items: center;
     justify-content: space-between;
     position:fixed;
-    z-index: 2;
+    z-index: 5;
     color: white;
 }
 #eff{
@@ -38,6 +39,57 @@ header{
   height: 30px;
   z-index: 10;
 }
+/* nav bar */
+#bars{
+  height: 40px;
+  width: 50px;
+  /* border: 1px solid white; */
+  position: fixed;
+  left: 0px;
+  top:0px;
+  z-index: 6;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  margin-top: 5px;
+  cursor: pointer;
+}
+#one{
+  height: 5px;
+  width: 80%;
+  background-color: white;
+  border-radius: 4px;
+  position: static;
+}
+#two{
+  height: 5px;
+  width: 80%;
+  background-color: white;
+  border-radius: 4px;
+  display: box;
+}
+#three{
+  height: 5px;
+  width: 80%;
+  background-color: white;
+  border-radius: 4px;
+  position: static;
+}
+#nav-bar{
+  height: 100vh;
+  width: 200px;
+  background-color: var(--bl);
+  position: absolute;
+  left: -200px;
+  top: 0px;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  
+}
 #naming{
     height: 40px;
     width: 300px;
@@ -46,8 +98,9 @@ header{
     justify-content: start;
     align-items: center;
     font-size: 2rem;
-    margin-left: 20px;
+    margin-left: 60px;
     font-weight: 800;
+    z-index: 6;
 }
 .user_login{
     margin-right: 80px;
@@ -85,14 +138,14 @@ header{
   position: absolute;
   bottom: -400px;
   width: 93vw;
-  background: #3586ff;
+  background: var(--bl);
   min-height: 100px;
   padding: 20px 50px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  
+  z-index: 20;
 }
 
 .social-icon,
@@ -205,7 +258,7 @@ header{
 .login-box{
   background-color: var(--bl);
   box-shadow: var(--bl) 0px 5px 15px;
-  margin-top: 12% ;
+  margin-top: 8% ;
   height: 70%;
   width: 40%;
   display: flex;
@@ -215,10 +268,17 @@ header{
   border-radius: 5px;
   color :black;
 }
+.login-box form{
+  width: 97%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
 .user-box{
-  margin-left: -80px;
+  /* margin-left: 80px; */
   height: 70px;
-  width: 170%;
+  width: 100%;
   display: flex;
   align-items: start;
   justify-content: center;
@@ -239,6 +299,19 @@ header{
 .user-box input::placeholder{
   color: white;
 }
+.input_user{
+  height: auto;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  position: relative;
+}
+.input_user i{
+  position: absolute;
+  right: 11px;
+}
+
 .button-form{
   margin-top: 5px;
   width: 110%;
@@ -250,12 +323,17 @@ header{
   flex-direction: column;
 }
 #submit{
-    width: 290px;
+    width:90%;
     height: 50%;
     border: none;
     border-radius: 5px;
     margin-bottom: 5px;
     font-size: 1.3rem;
+}
+#submit:hover{
+  color:white;
+  background: rgb(34,193,195);
+background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(45,180,253,0.8449973739495799) 100%);
 }
 #reg{
   border: none;
@@ -264,30 +342,62 @@ header{
 
 #sign_div{
   /* border: 1px solid black; */
-  margin-top: 12%;
+  margin-top: 8%;
   height: 70%;
-  width: 30%;
+  width: 40%;
   display: flex;
   align-items: center;
-  justify-content: start;
+  justify-content: center;
+  flex-direction: column;
   background-color: var(--bl);
   border-radius: 5px;
+  box-shadow: var(--bl) 0px 5px 15px;
   padding:8px;
+  position: relative;
+
+}
+#sign_div input::placeholder{
+  color: white;
 }
 #form_sign_up{
   width: 100%;
   display: flex;
+  /* margin-top: 40px; */
   align-items: start;
   justify-content:center;
   flex-direction: column;
   background-color: var(--bl);
+}
+#ic1{
+  position: absolute;
+  right: 16px;
+  top: 172px;
+  color: #ffffff;
+}
+#ic2{
+  position: absolute;
+  right: 16px;
+  top: 233px;
+  color: #ffffff;
+}
+#ic3{
+  position: absolute;
+  right: 16px;
+  top: 294px;
+  color: #ffffff;
+}
+#ic4{
+  position: absolute;
+  right: 16px;
+  top: 338px;
+  color: #ffffff;
 }
 #form_sign_up .take{
   height: 35px;
   width: 100%;
   border: none;
   outline: none;
-  border-bottom:2px solid white ;
+  border-bottom:2px solid black ;
   margin-top: 3px;
   margin-bottom: 6px;
   box-shadow: var(--bl) 0px 5px 15px;
@@ -303,9 +413,14 @@ header{
   border-radius: 5px;
   margin-top: 10px;
 }
+#submit_sign_up:hover{
+  color:white;
+  background: rgb(34,193,195);
+background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(45,180,253,0.8449973739495799) 100%);
+}
 #content{
-  height: 90vh;
-  width: 99%;
+  height: 80vh;
+  width: 80%;
   /* border: 1px solid black; */
   background-color: var(--bl);
   box-shadow: var(--bl) 0px 5px 15px;
@@ -334,11 +449,55 @@ header{
   margin: 20px;
   padding: 8px;
 }
-.product img{
+/* .product img{
+  
+  /* box-shadow: black 0px 5px 15px; */
+
+.carousel-inner{
+  height: 250px;
+
+}
+#coursal{
   width: 80%;
   height: 60%;
+  /* border: 1px solid black; */
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  overflow: hidden;
+}
+#image_1{
+  width: 100%;
+  height: 100%;
   border-radius: 5px;
-  /* box-shadow: black 0px 5px 15px; */
+  /* z-index: 4; */
+  position: absolute;
+  left: 0px;
+}
+#image_2{
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  /* display: none; */
+  position: absolute;
+  right: -200px;
+}
+#image_3{
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  /* display: none; */
+  position: absolute;
+  right: -200px;
+}
+#image_4{
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  /* display: none; */
+  position: absolute;
+  right: -200px;
 }
 .det{
   /* position: absolute; */
@@ -420,6 +579,11 @@ header{
   border-radius: 10px;
   padding: 8px;
   font-size: 1.3rem;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  flex-direction: row;
+  position: relative;
 }
 #post_items form{
   display: flex;
@@ -467,3 +631,14 @@ header{
   font-size: 1.3rem;
   margin-left: 5px;
 }
+
+#side_form{
+  width: 40%;
+}
+#files{
+  width: 50%;
+  position: absolute;
+  right: 20px;
+  top:5%;
+}
+
