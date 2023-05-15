@@ -12,6 +12,7 @@ body{
     align-items: center;
     justify-content: top;
     flex-direction: column;
+    height: auto;
 
 }
 ::selection {
@@ -46,7 +47,7 @@ body{
 }
 #process{
     position: absolute;
-    bottom: 80px;
+    bottom: 0px;
     /* border: 1px solid black; */
     height: 250px;
     width: 900px;
@@ -83,7 +84,7 @@ body{
     height: 100px;
     width: 60%;
     position:absolute;
-    bottom:-70px;
+    bottom:-200px;
     display: flex;
     align-items: center;
     justify-content: center;

@@ -7,16 +7,21 @@ module.exports.profile = function (req, res) {
   
   if (req.cookies.user_id) {
     User.findOne({ _id: req.cookies.user_id }, function (err, user) {
-      show_name();
       if (user) {
         product.find({}, function(err, data) {
+          // console.log(user);
           return res.render('users.ejs', {
-           title:"Benemart | profile",
-           user : user,
-           items: data
+            title:"Benemart | profile",
+            user : user,
+            items: data
           });
-         });
+        });
       }
+      else{
+        return res.redirect("/users/signin");
+      }
+      
+
     });
   } 
   else {
@@ -66,7 +71,11 @@ module.exports.create_session = function (req, res) {
       if (user.password != req.body.password) {
         return res.redirect("back");
       }
-      res.cookie("user_id", user.id);
+      res.cookie(
+  
+        "user_id",user.id,
+      
+      );
       return res.redirect("/users/profile");
     } else {
       return res.redirect("back");
@@ -97,10 +106,57 @@ module.exports.post_item = function (req, res) {
 module.exports.item_post = function (req, res) {
   product.create(req.body, function (err, user) {
     if (err) {
-      console.log("error in adding data to db");
+      console.log("error in adding data to db"+err);
       return res.redirect("/users/profile");
     }
     return res.redirect("/users/profile");
   });
   
 };
+
+module.exports.search=function (req,res){
+  // res.setHeader('Content-Type', 'application/json');
+  var st= req.body.search;
+  if (req.cookies.user_id) {
+    User.findOne({ _id: req.cookies.user_id }, function (err, user) {
+      if (user) {
+        if(st=="men"||st=="women"||st=="kids"||st=="tshirt"||st=="jeans"){
+          product.find({category:st}, function(err, data) {
+            return res.render('users.ejs', {
+              title:"Benemart | profile",
+              user : user,
+              items: data
+            });
+          });
+
+        }
+        else{
+        product.find({company:st}, function(err, data) {
+          // console.log(user);
+          return res.render('users.ejs', {
+            title:"Benemart | profile",
+            user : user,
+            items: data
+          });
+         });
+
+        }
+      }
+      else{
+        return res.redirect("/users/profile");
+      }
+      
+
+    });
+  } 
+  else {
+    return res.redirect("/users/profile");
+  }
+
+}
+
+
+module.exports.add_cart=function(req,res){
+  console.log(req.body.cartp);
+  return res.redirect("/users/profile");
+}

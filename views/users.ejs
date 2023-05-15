@@ -1,74 +1,76 @@
-
-<div id="search_bar">
-    <input type="text" placeholder="Search for products brands and more">
-</div>
+<form action="/users/search" method="post" id="search_bar">
+  <input
+    type="text"
+    placeholder="Search for products brands "
+    name="search"
+    autocomplete="off"
+  />
+  <!-- <input type="submit" value="Search" /> -->
+</form>
 
 <div id="content">
-  <%for (var i of items){ %> 
+  <%for (var i of items){ %>
   <div class="product">
-  <!--  coursal from bootstrap -->
-  <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img class="d-block w-100" src="<%=i.image1%>" alt="First slide">
+    <!--  coursal from bootstrap -->
+    <div
+      id="carouselExampleControls"
+      class="carousel slide"
+      data-ride="carousel"
+    >
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img class="d-block w-100" src="<%=i.image1%>" alt="First slide" />
+        </div>
+        <div class="carousel-item">
+          <img class="d-block w-100" src="<%=i.image2%>" alt="Second slide" />
+        </div>
+        <div class="carousel-item">
+          <img class="d-block w-100" src="<%=i.image3%>" alt="Third slide" />
+        </div>
       </div>
-      <div class="carousel-item">
-        <img class="d-block w-100" src="<%=i.image2%>" alt="Second slide">
-      </div>
-      <div class="carousel-item">
-        <img class="d-block w-100" src="<%=i.image3%>" alt="Third slide">
-      </div>
+      <a
+        class="carousel-control-prev"
+        href="#carouselExampleControls"
+        role="button"
+        data-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a
+        class="carousel-control-next"
+        href="#carouselExampleControls"
+        role="button"
+        data-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
     </div>
-    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a>
-  </div>
-<!-- coursal manuual -->
-    <!-- <div id="coursal">
-    <img
-    src="<%=i.image1%>"
-      alt="img not found"
-      id="image_1"
-    />
-    <img
-    src="<%=i.image2%>"
-      alt="img not found"
-      id="image_2"
-    />
-    <img
-    src="<%=i.image3%>"
-      alt="img not found"
-      id="image_3"
-    />
-    <img
-    src="<%=i.image4%>"
-      alt="img not found"
-      id="image_4"
-    />
-  </div> -->
+    <%perc =1 - i.off/100 %> <%var calc= parseInt(i.price/perc)%>
     <div class="det">
       <div class="company"><%=i.company%></div>
-      <div class="desc">i.desc</div>
+      <div class="desc"><%=i.desc%></div>
       <div class="price">
         <span class="price_curr">&#8377;<%=i.price%></span>
         <div class="pr_old">
-          <span class="price_old">&#8377;1500</span>
+          <span class="price_old">&#8377;<%=calc%></span>
           <div class="line"></div>
         </div>
         <span class="off"><%=i.off%>% off</span>
       </div>
-      <div class="stock"><%=i.count%></div>
-      <div class="size"><span class="size_span">Size</span> <%=i.size%></div>
+      <div class="stock">Only <%=i.count%> left</div>
+      <div class="size">
+        <span class="size_span">Size </span>
+        <%for (var j of i.size){ %> <%=j%> <%}%>
+      </div>
+      <div class="add_cart">
+        <form action="/users/add_cart" method="post">
+          <input type="submit" value="<%=i.id%>" name="cartp" id="Add_cart" />
+        </form>
+      </div>
     </div>
   </div>
   <%}%>
-  
-
-  
 </div>
 <script src="/js/product.js"></script>

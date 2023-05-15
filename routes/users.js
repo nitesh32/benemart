@@ -11,4 +11,6 @@ route.post('/create_session',usercontroller.create_session);
 route.post('/out',usercontroller.out);
 route.get('/post_item',usercontroller.post_item);
 route.post('/item_post',usercontroller.item_post);
+route.post('/search',usercontroller.search);
+route.post('/add_cart',usercontroller.add_cart);
 module.exports= route;

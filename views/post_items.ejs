@@ -3,31 +3,116 @@
   <form action="/users/item_post" method="post">
     <div id="side_form">
       <label>Enter Id</label>
-      <input type="text" name="id" placeholder="Enter id" />
+      <input type="text" name="id" placeholder="Enter id" autocomplete="off" />
       <label>Enter Company</label>
-      <input type="text" name="company" placeholder="Enter company of product"/>
+      <input
+        type="text"
+        name="company"
+        placeholder="Enter company of product"
+        autocomplete="off"
+      />
       <label>Enter off on product</label>
-      <input type="text" name="off" placeholder="How much off offering" />
+      <input
+        type="text"
+        name="off"
+        placeholder="How much off offering"
+        autocomplete="off"
+      />
       <label>Enter Title</label>
-      <input type="text" name="title" placeholder="Enter title" />
+      <input
+        type="text"
+        name="title"
+        placeholder="Enter title"
+        autocomplete="off"
+      />
       <label>Enter Price</label>
-      <input type="text" name="price" placeholder="Enter price" />
+      <input
+        type="text"
+        name="price"
+        placeholder="Enter price"
+        autocomplete="off"
+      />
       <label>Enter Description</label>
-      <input type="text" name="desc" placeholder="Enter description" />
-      <label>Enter Category</label>
-      <input type="text" name="category" placeholder="Enter category" />
+      <input
+        type="text"
+        name="desc"
+        placeholder="Enter description"
+        autocomplete="off"
+      />
+      <div id="category_div">
+        <label>Category</label>
+        <div class="enteries_entity">
+          <label>Men</label>
+          <input type="checkbox" name="category" value="men" class="hmm" />
+        </div>
+        <div class="enteries_entity">
+          <label>Women</label>
+          <input type="checkbox" name="category" value="women" class="hmm" />
+        </div>
+        <div class="enteries_entity">
+          <label>Kids</label>
+          <input type="checkbox" name="category" value="kids" class="hmm" />
+        </div>
+        <div class="enteries_entity">
+          <label>Tshirt</label>
+          <input type="checkbox" name="category" value="tshirt" class="hmm" />
+        </div>
+        <div class="enteries_entity">
+          <label>Jeans</label>
+          <input type="checkbox" name="category" value="jeans" class="hmm" />
+        </div>
+      </div>
     </div>
     <div id="files">
-    <label>Enter Image</label>
-    <input type="text" name="image1" placeholder="Enter image url"  autocomplete="off"/>
-    <input type="text" name="image2" placeholder="Enter image url" autocomplete="off"/>
-    <input type="text" name="image3" placeholder="Enter image url" autocomplete="off"/>
-    <input type="text" name="image4" placeholder="Enter image url" autocomplete="off"/>
+      <label>Enter Image</label>
+      <input
+        type="text"
+        name="image1"
+        placeholder="Enter image url"
+        autocomplete="off"
+      />
+      <input
+        type="text"
+        name="image2"
+        placeholder="Enter image url"
+        autocomplete="off"
+      />
+      <input
+        type="text"
+        name="image3"
+        placeholder="Enter image url"
+        autocomplete="off"
+      />
+
+      <div id="seperate">
+        <label>Enter Count</label>
+        <input
+          type="text"
+          name="count"
+          placeholder="Enter number of products"
+          autocomplete="off"
+        />
+        <!-- <label>Enter Size</label>
+    <input type="text" name="size" placeholder="Enter size available" autocomplete="off"/> -->
+
+        <div id="enteries">
+          <label>Size</label>
+          <div class="enteries_entity">
+            <label>Extra large</label>
+            <input type="checkbox" name="size" value="XL" class="hmm" />
+          </div>
+          <div class="enteries_entity">
+            <label>Large</label>
+            <input type="checkbox" name="size" value="L" class="hmm" />
+          </div>
+          <div class="enteries_entity">
+            <label>Medium</label>
+            <input type="checkbox" name="size" value="M" class="hmm" />
+          </div>
+        </div>
+      </div>
     </div>
-    <label>Enter Count</label>
-    <input type="text" name="count" placeholder="Enter number of products" autocomplete="off"/>
-    <label>Enter Size</label>
-    <input type="text" name="size" placeholder="Enter size available" autocomplete="off"/>
+
     <input
       type="submit"
       value="Submit item"

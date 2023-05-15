@@ -1,43 +1,110 @@
+
 <header>
     <div id="bars">
         <div id="one"></div>
         <div id="two"></div>
         <div id="three"></div>
       </div>
-      <div id="nav-bar">
-        
-        <form action="/users/profile" method="get">
-            <input type="Submit" value="profile">
+        <div class="user_login">
+            
+                <% if(locals.user){%>
+                    <input type="Submit" value="<%-user.name%>" >
+                <%}else{%>
+                    <form action="/users/signin" method="get"></form>
+                    <input type="Submit" value="sign in" >
+                    </form>
+                <%}%>
+            
+            
+                <% if(locals.user){%>
+                    <input type="Submit" value="Category" id="cat">
+                <%}else{%>  
+                    <form action="/users/signup" method="get"></form>
+                    <input type="Submit" value="Sign up">
+                    </form>
+                <%}%>   
+            
+        </div>
+
+        <div id="nav-bar">
+        <form action="/" method="get" class="outer_form" id="form_one">
+            <input type="Submit" value="Home" class="inner_form">
+            <div class="line_btw" id="line_one"></div>
         </form>
-        <form action="/" method="get">
-            <input type="Submit" value="home">
+        <form action="/users/profile" method="get" class="outer_form" id="form_two">
+            <input type="Submit" value="Shop" class="inner_form">
+            <div class="line_btw" id="line_two"></div>
         </form>
-        <form action="/users/post_item" method="get">
-            <input type="Submit" value="post items">
+        <form action="/users/post_item" method="get" class="outer_form" id="form_three">
+            <input type="Submit" value="Post ads" class="inner_form">
+            <div class="line_btw" id="line_three"></div>
         </form>
-        <form action="/users/signin" method="get">
-            <input type="Submit" value="Sign in">
+        <form action="/users/signup" method="get" class="outer_form" id="form_four">
+            <input type="Submit" value="Sign up" class="inner_form">
+            <div class="line_btw" id="line_four"></div>
         </form>
-        <form action="/users/signup" method="get">
-            <input type="Submit" value="Sign up">
+        <form action="/users/signin" method="get" class="outer_form" id="form_five">
+            <input type="Submit" value="Sign in" class="inner_form">
+            <div class="line_btw" id="line_five"></div>
         </form>
-        <form action="/users/out" method="post">
-    <input type="Submit" value="Sign out">
-</form>
+        <form action="/users/out" method="post" class="outer_form" id="form_six">
+        <input type="Submit" value="Sign out" class="inner_form">
+        <div class="line_btw" id="line_six"></div>
+        </form>
       </div>
     <section id="naming">
         Benemart
     </section>
-    <div class="user_login">
-        <form action="/users/signin" method="get">
-                <input type="Submit" value="Sign in">
-        </form>
-        <form action="/users/signup" method="get">
-                <input type="Submit" value="Sign up">
-        </form>
-    </div>
     
-    
+    <div id="category_box">
+        <div id="close_cat">
+            <i class="fa fa-times fa-2x" ></i>
+        </div>
+        <div id="form_div_cat">
+        <form action="/users/search" method="post" class="category" id="cat_form_1">
+            <input
+              type="submit"
+              name="search"
+              value="men"
+            />
+          </form>
+          <div id="cat_line_1"></div>
+          <form action="/users/search" method="post" class="category" id="cat_form_2">
+            <input
+              type="submit"
+              name="search"
+              value="women"
+            />
+          </form>
+          <div id="cat_line_2"></div>
+          <form action="/users/search" method="post" class="category" id="cat_form_3">
+            <input
+              type="submit"
+              name="search"
+              value="kids"
+            />
+          </form>
+          <div id="cat_line_3"></div>
+          <form action="/users/search" method="post" class="category" id="cat_form_4">
+            <input
+              type="submit"
+              name="search"
+              value="tshirt"
+            />
+          </form>
+          <div id="cat_line_4"></div>
+          <form action="/users/search" method="post" class="category" id="cat_form_5">
+            <input
+              type="submit"
+              name="search"
+              value="jeans"
+            />
+          </form>
+          <div id="cat_line_5"></div>
+          </div>
+      </div>
+    <script src="/js/header.js"></script>
 </header>
 <div id="eff"></div>
-<script src="/js/header.js"></script>
+
+
